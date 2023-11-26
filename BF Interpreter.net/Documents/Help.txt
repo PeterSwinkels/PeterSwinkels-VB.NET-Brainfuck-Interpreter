@@ -1,0 +1,25 @@
+BF Interpreter Help - by: Peter Swinkels, ***2023***
+
+This program has been designed to execute Brainf*ck code, a language designed by Urban Müller.
+
+Usage:
+
+Command line: "BF Interpreter.exe" [path] [[input line break] [output line break]]
+
+If the path to a Brainf*ck code file is ommitted the program will request the user to specify the path. It is possible to drag a file into the program's console window causing its path to automatically appear. The user can then confirm by pressing the Enter key or modify the path first.
+
+Input/output line breaks must always be specified with a path on the command line. When ommitted the user is requested to specify the types of line breaks to be used manually. Suggested types are:
+
+Type:		Escape sequence:
+Linux/Unix	/0A
+MS-DOS		/0D
+Windows		/0D/0A
+
+Note:
+Some Brainf*ck programs might not explicitly request input, but will silently wait for it, appearing to be frozen. It is recommended to test whether keystrokes are being echoed. If that is the case, the program is waiting input.
+
+It is recommended to run this interpreter in a console as some programs might terminate without warning, causing any output to be lost.
+
+
+
+
