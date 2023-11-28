@@ -162,9 +162,9 @@ Public Module CoreModule
    'This procedure manages the list of loop start/end addresses.
    Private Function Loops(Optional LoopInstructionP As Integer = Nothing, Optional Code As String = Nothing) As Integer
       Try
-         Dim EndOfLoop As Integer = 0
          Dim LoopStack As New Stack(Of Integer)
          Dim NewInstructionP As Integer = Nothing
+         Dim StartOfLoop As New Integer
          Static LoopList As New Dictionary(Of Integer, Integer)
 
          If Code = Nothing Then
@@ -181,9 +181,9 @@ Public Module CoreModule
                         Console.WriteLine("End of loop without start.")
                         Exit For
                      Else
-                        EndOfLoop = LoopStack.Pop()
-                        LoopList.Add(EndOfLoop, InstructionP)
-                        LoopList.Add(InstructionP, EndOfLoop)
+                        StartOfLoop = LoopStack.Pop()
+                        LoopList.Add(StartOfLoop, InstructionP)
+                        LoopList.Add(InstructionP, StartOfLoop)
                      End If
                End Select
             Next InstructionP
